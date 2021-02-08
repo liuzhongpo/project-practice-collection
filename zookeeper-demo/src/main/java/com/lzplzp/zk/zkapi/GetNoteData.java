@@ -72,6 +72,7 @@ public class GetNoteData implements Watcher{
          */
         byte[] data = zooKeeper.getData("/zk-persistent", true, null);
         System.out.println(new String(data));
+
     }
 
 }
