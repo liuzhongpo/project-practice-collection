@@ -2,8 +2,6 @@ package com.lzplzp.zk.zkapi;
 
 import org.apache.zookeeper.*;
 
-import java.io.IOException;
-
 /**
  * @author thinking
  * @projectName project-practice-collection
@@ -37,7 +35,7 @@ public class CreateSession implements Watcher{
             System.out.println("process execute......");
             //创建节点
             try {
-                createNode();
+                createNodeSync();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -45,7 +43,7 @@ public class CreateSession implements Watcher{
 
     }
 
-    private void createNode() throws Exception {
+    private void createNodeSync() throws Exception {
         /**
          * final String path：节点创建的路径
          * byte[] data,  节点创建要保存的数据，是个byte类型的
